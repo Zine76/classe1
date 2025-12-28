@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dossier d'avancement à la classe 1 - Zineddine Chergui - Technicien en électronique - UQAM">
+    <meta name="author" content="Zineddine Chergui">
+    <title>Avancement à la classe 1 — Zineddine Chergui | UQAM</title>
+    
+    <!-- Favicon placeholder -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Print-friendly styles -->
+    <link rel="stylesheet" href="styles.css" media="print">
+</head>
+<body>
+    <!-- Skip to content (accessibility) -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
+    <!-- Lightbox pour zoom images -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Fermer">&times;</button>
+        <button class="lightbox-prev" id="lightbox-prev" aria-label="Image précédente">&#10094;</button>
+        <button class="lightbox-next" id="lightbox-next" aria-label="Image suivante">&#10095;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+            <p class="lightbox-caption" id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="header-content">
+            <div class="header-text">
+                <h1 class="site-title">Avancement à la classe 1</h1>
+                <p class="site-subtitle">Zineddine Chergui — Technicien en électronique</p>
+                <p class="site-affiliation">Service de l'audiovisuel, Université du Québec à Montréal (UQAM)</p>
+            </div>
+            
+            <div class="header-actions">
+                <a href="Avancement_ClasseI_Zineddine_Chergui.docx" class="btn btn-primary" download aria-label="Télécharger le dossier Word">
+                    <span class="btn-icon" aria-hidden="true">📄</span>
+                    Télécharger le dossier
+                </a>
+                <button type="button" class="btn btn-secondary" id="print-btn" aria-label="Imprimer en PDF">
+                    <span class="btn-icon" aria-hidden="true">🖨️</span>
+                    Imprimer en PDF
+                </button>
+            </div>
+            
+            <div class="header-chips" role="list" aria-label="Résumé du dossier">
+                <span class="chip chip-criteria" role="listitem">Critères démontrés : 1, 2, 3</span>
+                <span class="chip chip-projects" role="listitem">Projets : StockAV, Vitrine</span>
+                <span class="chip chip-date" role="listitem">Décembre 2025</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Table of Contents (Sticky Navigation) -->
+    <nav class="toc" id="toc" role="navigation" aria-label="Table des matières">
+        <button class="toc-toggle" id="toc-toggle" aria-expanded="false" aria-controls="toc-list">
+            <span class="toc-toggle-icon">☰</span>
+            <span class="toc-toggle-text">Navigation</span>
+        </button>
+        
+        <div class="toc-content" id="toc-list">
+            <div class="toc-search">
+                <label for="search-input" class="visually-hidden">Rechercher dans le document</label>
+                <input type="search" id="search-input" placeholder="Rechercher..." aria-label="Rechercher dans le document">
+            </div>
+            
+            <ol class="toc-list">
+                <li><a href="#resume-executif">Résumé exécutif</a></li>
+                <li><a href="#contexte-unite">Contexte et unité</a></li>
+                <li><a href="#criteres-uqam">Critères UQAM (1–3)</a></li>
+                <li><a href="#activite-stockav">Activité 1 — StockAV</a></li>
+                <li><a href="#activite-vitrine">Activité 2 — Vitrine</a></li>
+                <li><a href="#annexes-preuves">Annexes / Preuves</a></li>
+                <li><a href="#cv-resume">CV résumé</a></li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" role="main">
+        
+        <!-- Section 1: Résumé exécutif -->
+        <section id="resume-executif" class="section" aria-labelledby="resume-executif-title">
+            <h2 id="resume-executif-title" class="section-title">Résumé exécutif</h2>
+            
+            <div class="section-content">
+                <p class="lead">
+                    Ce dossier présente ma demande d'avancement à la <strong>classe 1</strong> du corps d'emploi 
+                    <em>Technicien en électronique</em> au sein du Service de l'audiovisuel de l'UQAM. 
+                    Il démontre l'atteinte des critères 1, 2 et 3 du référentiel institutionnel à travers 
+                    deux projets majeurs : <strong>StockAV</strong> et <strong>Vitrine</strong>.
+                </p>
+                
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h3 class="summary-card-title">StockAV</h3>
+                        <p>Application web complète de gestion de stock de composants électroniques avec recherche intelligente par IA, validation transactionnelle et traçabilité complète.</p>
+                        <ul class="summary-highlights">
+                            <li>Architecture multi-couches (Frontend SPA, Supabase, PostgreSQL)</li>
+                            <li>Intégration IA (Cohere, Google Gemini)</li>
+                            <li>Transactions atomiques et audit complet</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <h3 class="summary-card-title">Vitrine</h3>
+                        <p>Interface web publique de diagnostic et monitoring audiovisuel permettant aux usagers de signaler des problèmes techniques et aux techniciens d'accéder à des ressources avancées.</p>
+                        <ul class="summary-highlights">
+                            <li>Double usage : usagers et techniciens</li>
+                            <li>Moteur RAG pour analyse intelligente</li>
+                            <li>Mode technicien avec plans PDF et documentation</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="impacts-summary">
+                    <h3>Impacts démontrés</h3>
+                    <ul class="impacts-list">
+                        <li><strong>Standardisation</strong> des processus d'inventaire via un système unifié</li>
+                        <li><strong>Réduction des erreurs</strong> grâce à la validation transactionnelle</li>
+                        <li><strong>Gain de temps significatif</strong> via la recherche IA d'équivalents techniques</li>
+                        <li><strong>Fiabilité opérationnelle</strong> avec fonctions PostgreSQL atomiques</li>
+                        <li><strong>Amélioration de la qualité des données</strong> par intégration d'APIs fournisseurs</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Contexte et unité -->
+        <section id="contexte-unite" class="section" aria-labelledby="contexte-unite-title">
+            <h2 id="contexte-unite-title" class="section-title">Contexte et unité</h2>
+            
+            <div class="section-content">
+                <h3>Service de l'audiovisuel — UQAM</h3>
+                <p>
+                    Le Service de l'audiovisuel de l'UQAM assure le support technique des équipements 
+                    audiovisuels dans les salles de cours, amphithéâtres et espaces d'enseignement. 
+                    L'équipe intervient sur un parc d'équipements diversifié comprenant projecteurs, 
+                    systèmes audio, écrans tactiles, et équipements de visioconférence.
+                </p>
+                
+                <h3>Tableau 1 — Structure organisationnelle</h3>
+                <div class="table-responsive">
+                    <table class="data-table" aria-describedby="tableau-1-desc">
+                        <caption id="tableau-1-desc">Chaîne hiérarchique et équipe du Service de l'audiovisuel</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Fonction</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Rôle</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Direction</td>
+                                <td>Jean-François Tremblay</td>
+                                <td>Directeur du Service de l'audiovisuel</td>
+                            </tr>
+                            <tr>
+                                <td>Coordination</td>
+                                <td>Dominic Besner</td>
+                                <td>Coordonnateur technique</td>
+                            </tr>
+                            <tr>
+                                <td>Supervision</td>
+                                <td>Simon-Pierre Gérard</td>
+                                <td>Chef d'équipe technique</td>
+                            </tr>
+                            <tr>
+                                <td>Support</td>
+                                <td>Nicholas Rivet</td>
+                                <td>Technicien senior</td>
+                            </tr>
+                            <tr>
+                                <td>Équipe</td>
+                                <td>Collègues techniciens</td>
+                                <td>Techniciens en électronique</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h3>Contexte opérationnel</h3>
+                <p>
+                    Dans un environnement de laboratoire ou makerspace, la gestion manuelle d'un inventaire 
+                    de composants électroniques présente plusieurs défis :
+                </p>
+                <ul>
+                    <li><strong>Multiplicité des références</strong> : Des milliers de composants avec spécifications variées</li>
+                    <li><strong>Localisation physique</strong> : Organisation par tiroirs nécessitant une traçabilité précise</li>
+                    <li><strong>Recherche d'équivalents</strong> : Besoin fréquent de trouver des composants compatibles</li>
+                    <li><strong>Gestion des kits</strong> : Prélèvement coordonné de multiples composants</li>
+                    <li><strong>Audit et conformité</strong> : Réconciliation périodique avec historique complet</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 3: Critères UQAM -->
+        <section id="criteres-uqam" class="section" aria-labelledby="criteres-uqam-title">
+            <h2 id="criteres-uqam-title" class="section-title">Critères UQAM (1–3)</h2>
+            
+            <div class="section-content">
+                <p class="section-intro">
+                    Cette section présente les trois critères du référentiel UQAM pour l'avancement à la classe 1, 
+                    avec la démonstration de leur atteinte à travers les projets réalisés.
+                </p>
+                
+                <div class="notice notice-info">
+                    <p><strong>Note :</strong> Le critère 4 n'est pas développé dans ce dossier.</p>
+                </div>
+                
+                <!-- Critère 1 -->
+                <article class="criterion collapsible" id="critere-1">
+                    <button class="criterion-header collapsible-toggle" aria-expanded="true" aria-controls="critere-1-content">
+                        <h3 class="criterion-title">
+                            <span class="criterion-number">Critère 1</span>
+                            Complexité technique et opérationnelle
+                        </h3>
+                        <span class="collapsible-icon" aria-hidden="true">▼</span>
+                    </button>
+                    
+                    <div class="criterion-content collapsible-content" id="critere-1-content">
+                        <div class="criterion-definition">
+                            <h4>Définition officielle</h4>
+                            <blockquote>
+                                « Le titulaire démontre une maîtrise des tâches complexes nécessitant une expertise 
+                                technique approfondie et une capacité à résoudre des problèmes opérationnels 
+                                dans un environnement multi-systèmes. »
+                            </blockquote>
+                        </div>
+                        
+                        <div class="criterion-demonstration">
+                            <h4>Démonstration</h4>
+                            
+                            <h5>Complexité technique démontrée</h5>
+                            <ul>
+                                <li><strong>Architecture multi-couches</strong> : Frontend SPA vanilla JS (1411 lignes), 
+                                    backend serverless (5 Edge Functions Deno), base de données PostgreSQL avec 
+                                    RPC functions transactionnelles</li>
+                                <li><strong>Gestion de la concurrence</strong> : Synchronisation temps réel via 
+                                    Supabase Realtime, transactions atomiques PostgreSQL avec verrous (<code>FOR UPDATE</code>)</li>
+                                <li><strong>Validation métier complexe</strong> : Prévention stock négatif, 
+                                    vérification de disponibilité avant sortie de kits</li>
+                                <li><strong>Parsing et extraction JSON depuis IA</strong> : Extraction robuste 
+                                    depuis réponses Cohere avec gestion des erreurs</li>
+                                <li><strong>Intégration de 3 APIs externes</strong> : Cohere, Google AI, Mouser</li>
+                            </ul>
+                            
+                            <h5>Complexité opérationnelle démontrée</h5>
+                            <ul>
+                                <li><strong>Multi-utilisateurs simultanés</strong> : Gestion des sessions avec état persistant</li>
+                                <li><strong>Import/Export CSV volumineux</strong> : Parsing avec déduplication et modes d'importation</li>
+                                <li><strong>Gestion des erreurs réseau</strong> : Retry automatique, messages utilisateur clairs</li>
+                            </ul>
+                            
+                            <div class="evidence-ref">
+                                <strong>Preuves :</strong> 
+                                <code>script.js:216</code> (appel RPC), 
+                                <code>supabase/functions/issue-kits/index.ts:205-208</code> (verrou ligne)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Critère 2 -->
+                <article class="criterion collapsible" id="critere-2">
+                    <button class="criterion-header collapsible-toggle" aria-expanded="false" aria-controls="critere-2-content">
+                        <h3 class="criterion-title">
+                            <span class="criterion-number">Critère 2</span>
+                            Conception, adaptation et innovation
+                        </h3>
+                        <span class="collapsible-icon" aria-hidden="true">▼</span>
+                    </button>
+                    
+                    <div class="criterion-content collapsible-content collapsed" id="critere-2-content">
+                        <div class="criterion-definition">
+                            <h4>Définition officielle</h4>
+                            <blockquote>
+                                « Le titulaire démontre une capacité à concevoir des solutions innovantes, 
+                                à adapter les standards existants et à proposer des améliorations significatives 
+                                aux processus et systèmes en place. »
+                            </blockquote>
+                        </div>
+                        
+                        <div class="criterion-demonstration">
+                            <h4>Démonstration</h4>
+                            
+                            <h5>Standards et bonnes pratiques appliqués</h5>
+                            <ul>
+                                <li><strong>Séparation des responsabilités</strong> : Frontend (UI), Backend (validation), 
+                                    Edge Functions (intégrations externes)</li>
+                                <li><strong>Sécurité</strong> : Row Level Security (RLS), clés API dans Supabase Secrets, 
+                                    authentification requise pour vues protégées</li>
+                                <li><strong>Modularité</strong> : Edge Functions réutilisables avec CORS partagé</li>
+                                <li><strong>Performance</strong> : Pagination côté serveur, cache catégories côté client</li>
+                            </ul>
+                            
+                            <h5>Innovations apportées</h5>
+                            <ul>
+                                <li><strong>Recherche IA d'équivalents techniques</strong> : Utilisation de Cohere pour 
+                                    analyse technique et suggestions d'équivalents avec intégration stock local</li>
+                                <li><strong>Système de kits optimisé par tiroir</strong> : Groupement automatique 
+                                    pour optimisation des prélèvements</li>
+                                <li><strong>Affichage 7-segments</strong> : Visualisation originale du stock</li>
+                                <li><strong>Mode technicien Vitrine</strong> : Page cachée avec plans PDF, 
+                                    documentation et outils de diagnostic</li>
+                            </ul>
+                            
+                            <div class="evidence-ref">
+                                <strong>Preuves :</strong> 
+                                <code>supabase/functions/ai-advanced-search/index.ts:75-99</code> (prompt structuré),
+                                <code>script.js:17</code> (collectedDrawersSet)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Critère 3 -->
+                <article class="criterion collapsible" id="critere-3">
+                    <button class="criterion-header collapsible-toggle" aria-expanded="false" aria-controls="critere-3-content">
+                        <h3 class="criterion-title">
+                            <span class="criterion-number">Critère 3</span>
+                            Autonomie et responsabilité
+                        </h3>
+                        <span class="collapsible-icon" aria-hidden="true">▼</span>
+                    </button>
+                    
+                    <div class="criterion-content collapsible-content collapsed" id="critere-3-content">
+                        <div class="criterion-definition">
+                            <h4>Définition officielle</h4>
+                            <blockquote>
+                                « Le titulaire démontre une autonomie complète dans la prise de décisions techniques, 
+                                la gestion de projets et la responsabilité des livrables de bout en bout. »
+                            </blockquote>
+                        </div>
+                        
+                        <div class="criterion-demonstration">
+                            <h4>Démonstration</h4>
+                            
+                            <h5>Décisions techniques prises</h5>
+                            <ul>
+                                <li><strong>Choix technologiques</strong> : Supabase (BaaS) pour gain de temps, 
+                                    Vanilla JS pour légèreté, Edge Functions Deno pour scalabilité</li>
+                                <li><strong>Architecture base de données</strong> : JSONB pour attributs dynamiques, 
+                                    RPC functions pour logique métier centralisée</li>
+                                <li><strong>Gestion des erreurs</strong> : Messages utilisateur clairs, 
+                                    logging structuré dans Edge Functions</li>
+                            </ul>
+                            
+                            <h5>Responsabilité end-to-end</h5>
+                            <ul>
+                                <li>Conception → Développement → Déploiement → Maintenance</li>
+                                <li>Documentation README complète</li>
+                                <li>Priorisation des fonctionnalités core avant features optionnelles</li>
+                            </ul>
+                            
+                            <h5>Collaboration et interactions</h5>
+                            <ul>
+                                <li><strong>Utilisateurs finaux</strong> : Techniciens de laboratoire, administrateurs</li>
+                                <li><strong>Stakeholders</strong> : Responsable laboratoire, équipe technique</li>
+                                <li><strong>Fournisseurs externes</strong> : Cohere AI, Google AI, Mouser</li>
+                            </ul>
+                            
+                            <div class="evidence-ref">
+                                <strong>Preuves :</strong> 
+                                <code>README.md</code> (documentation complète),
+                                <code>script.js:201</code> (vues conditionnelles)
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Section 4: Activité 1 — StockAV -->
+        <section id="activite-stockav" class="section" aria-labelledby="activite-stockav-title">
+            <h2 id="activite-stockav-title" class="section-title">Activité 1 — StockAV</h2>
+            
+            <div class="section-content">
+                <div class="activity-summary">
+                    <h3>Résumé</h3>
+                    <p>
+                        <strong>StockAV</strong> est une application web complète de gestion de stock de composants 
+                        électroniques, intégrant des capacités de recherche intelligente par intelligence artificielle. 
+                        L'application répond aux besoins opérationnels d'un laboratoire nécessitant une traçabilité 
+                        précise des composants, une recherche rapide d'équivalents techniques, et une gestion 
+                        automatisée des kits de prélèvement.
+                    </p>
+                </div>
+                
+                <!-- Illustrations -->
+                <div class="illustrations-panel">
+                    <h3>Illustrations du projet</h3>
+                    <div class="illustrations-grid illustrations-grid-large">
+                        <figure class="illustration-item">
+                            <img src="assets/stockav/stockav-01.jpeg" alt="Recherche de composants avec conversation IA" loading="lazy">
+                            <figcaption>Recherche intelligente — Conversation IA pour trouver des équivalents techniques (LM358N, LM358D, TL072CP)</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/stockav/stockav-02.jpeg" alt="Inventaire avec modal de modification de stock" loading="lazy">
+                            <figcaption>Inventaire — Modal de modification rapide du stock avec attributs clés et contrôles +/-</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/stockav/stockav-03.jpeg" alt="Kit Actuel - Liste de prélèvement" loading="lazy">
+                            <figcaption>Kit Actuel — Liste de prélèvement avec indication des tiroirs à visiter (B104, B116, B120, C102)</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/stockav/stockav-04.jpeg" alt="Historique des mouvements de stock" loading="lazy">
+                            <figcaption>Historique — Journal complet des mouvements avec technicien, action, référence et stock final</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/stockav/stockav-05.jpeg" alt="Administration - Gestion des catégories et composants" loading="lazy">
+                            <figcaption>Administration — Gestion des catégories, attributs spécifiques et détails complets des composants</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/stockav/stockav-06.jpeg" alt="Paramètres et import/export de données" loading="lazy">
+                            <figcaption>Paramètres — Export CSV/TXT et import de données avec modes enrichir ou écraser</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/stockav/stockav-07.jpeg" alt="Inventaire avec sélection multiple" loading="lazy">
+                            <figcaption>Inventaire — Sélection multiple pour ajout au kit avec filtres par catégorie et recherche texte</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                
+                <!-- Points clés -->
+                <div class="key-points collapsible">
+                    <button class="key-points-header collapsible-toggle" aria-expanded="true" aria-controls="stockav-keypoints">
+                        <h3>Points clés</h3>
+                        <span class="collapsible-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="key-points-content collapsible-content" id="stockav-keypoints">
+                        <div class="key-points-grid">
+                            <div class="key-point">
+                                <h4>Architecture</h4>
+                                <ul>
+                                    <li>Frontend SPA (HTML5/CSS3/JavaScript vanilla)</li>
+                                    <li>Backend Supabase (PostgreSQL + Edge Functions)</li>
+                                    <li>5 Edge Functions TypeScript (Deno)</li>
+                                    <li>Supabase Auth avec sessions JWT</li>
+                                </ul>
+                            </div>
+                            <div class="key-point">
+                                <h4>Fonctionnalités</h4>
+                                <ul>
+                                    <li>CRUD complet des composants avec catégories dynamiques</li>
+                                    <li>Système de kits (BOM) avec groupement par tiroir</li>
+                                    <li>Recherche IA avancée via Cohere</li>
+                                    <li>Audit et historique complet des mouvements</li>
+                                </ul>
+                            </div>
+                            <div class="key-point">
+                                <h4>Intégrations</h4>
+                                <ul>
+                                    <li>Cohere AI (command-a-03-2025)</li>
+                                    <li>Google Gemini (chat général)</li>
+                                    <li>Mouser API (données composants)</li>
+                                    <li>Supabase Realtime (synchronisation)</li>
+                                </ul>
+                            </div>
+                            <div class="key-point">
+                                <h4>Sécurité</h4>
+                                <ul>
+                                    <li>Row Level Security (RLS)</li>
+                                    <li>Clés API dans Supabase Secrets</li>
+                                    <li>CORS configuré pour Edge Functions</li>
+                                    <li>Authentification requise pour vues protégées</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Livrables -->
+                <div class="deliverables">
+                    <h3>Livrables</h3>
+                    <div class="deliverables-grid">
+                        <div class="deliverable">
+                            <span class="deliverable-icon" aria-hidden="true">📄</span>
+                            <div class="deliverable-info">
+                                <strong>index.html</strong>
+                                <span>SPA principale (410 lignes)</span>
+                            </div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="deliverable-icon" aria-hidden="true">⚙️</span>
+                            <div class="deliverable-info">
+                                <strong>script.js</strong>
+                                <span>Logique applicative (1411 lignes)</span>
+                            </div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="deliverable-icon" aria-hidden="true">🎨</span>
+                            <div class="deliverable-info">
+                                <strong>style.css + admin-styles.css</strong>
+                                <span>Styles principaux et administration</span>
+                            </div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="deliverable-icon" aria-hidden="true">☁️</span>
+                            <div class="deliverable-info">
+                                <strong>5 Edge Functions</strong>
+                                <span>ai-advanced-search, ai-component-info, ai-general-chat, mouser-lookup, issue-kits</span>
+                            </div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="deliverable-icon" aria-hidden="true">🗄️</span>
+                            <div class="deliverable-info">
+                                <strong>Base de données PostgreSQL</strong>
+                                <span>4 tables + 4 fonctions RPC transactionnelles</span>
+                            </div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="deliverable-icon" aria-hidden="true">📚</span>
+                            <div class="deliverable-info">
+                                <strong>README.md</strong>
+                                <span>Documentation complète</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Impacts -->
+                <div class="impacts">
+                    <h3>Impacts mesurables</h3>
+                    <div class="impacts-grid">
+                        <div class="impact-card">
+                            <div class="impact-value">~10 sec</div>
+                            <div class="impact-label">Temps de recherche d'équivalents</div>
+                            <div class="impact-comparison">vs 10-15 min (manuel)</div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-value">0</div>
+                            <div class="impact-label">Erreurs de stock négatif</div>
+                            <div class="impact-comparison">Validation transactionnelle</div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-value">100%</div>
+                            <div class="impact-label">Traçabilité des mouvements</div>
+                            <div class="impact-comparison">Table logs complète</div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-value">-50%</div>
+                            <div class="impact-label">Temps d'audit</div>
+                            <div class="impact-comparison">Interface dédiée vs Excel</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Activité 2 — Vitrine -->
+        <section id="activite-vitrine" class="section" aria-labelledby="activite-vitrine-title">
+            <h2 id="activite-vitrine-title" class="section-title">Activité 2 — Vitrine</h2>
+            
+            <div class="section-content">
+                <div class="activity-summary">
+                    <h3>Résumé</h3>
+                    <p>
+                        <strong>Vitrine</strong> est une page web standalone (HTML/CSS/JavaScript) conçue pour 
+                        permettre aux usagers (professeurs, étudiants, personnel) de signaler des problèmes 
+                        techniques dans les salles de classe de l'UQAM. La page fonctionne comme une interface 
+                        publique de diagnostic et de monitoring, sans nécessiter d'authentification.
+                    </p>
+                </div>
+                
+                <!-- Double usage callout -->
+                <div class="callout callout-important">
+                    <h4>⚠️ Double usage : Usagers ET Techniciens</h4>
+                    <ul>
+                        <li><strong>Mode usager</strong> : Interface publique pour signaler des problèmes (vue par défaut)</li>
+                        <li><strong>Mode technicien</strong> : Page cachée accessible via raccourci/clé secrète, 
+                            affichant des ressources techniques avancées</li>
+                    </ul>
+                </div>
+                
+                <!-- Illustrations -->
+                <div class="illustrations-panel">
+                    <h3>Illustrations du projet</h3>
+                    <div class="illustrations-grid illustrations-grid-large">
+                        <figure class="illustration-item">
+                            <img src="assets/vitrine/vitrine-01.jpeg" alt="Interface principale Vitrine - Diagnostic interactif" loading="lazy">
+                            <figcaption>Interface principale — Diagnostic interactif et assistance audiovisuelle avec catégories de problèmes (Audio, Vidéo, Réseau)</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/vitrine/vitrine-02.jpeg" alt="Analyse des équipements en cours" loading="lazy">
+                            <figcaption>Analyse des équipements — Identification automatique des dispositifs audiovisuels de la salle</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/vitrine/vitrine-03.jpeg" alt="Modal de création de ticket d'assistance technique" loading="lazy">
+                            <figcaption>Création de ticket — Modal d'intervention technique avec appel SEA (#6135) et description détaillée</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/vitrine/vitrine-04.jpeg" alt="Correction automatique terminée avec succès" loading="lazy">
+                            <figcaption>Correction automatique — Confirmation de résolution avec feedback utilisateur (OUI/NON)</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/vitrine/vitrine-05.jpeg" alt="Diagnostic du projecteur en cours" loading="lazy">
+                            <figcaption>Diagnostic projecteur — Vérification de l'état et correction en cours avec barre de progression</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/vitrine/vitrine-06.jpeg" alt="Modal d'accès technique avec mot de passe" loading="lazy">
+                            <figcaption>Accès technique — Authentification par mot de passe pour accéder au mode avancé technicien</figcaption>
+                        </figure>
+                        <figure class="illustration-item">
+                            <img src="assets/vitrine/vitrine-07.jpeg" alt="Mode Technique avec plans unifilaires" loading="lazy">
+                            <figcaption>Mode Technique — Accès aux plans unifilaires PDF et outils techniques avancés par salle</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                
+                <!-- Mode technicien detail -->
+                <div class="feature-highlight">
+                    <h3>🔧 Mode Technicien — Ressources avancées</h3>
+                    <p>
+                        Le mode technicien est accessible via <code>?mode=tech</code> ou raccourci clavier 
+                        (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>) et offre :
+                    </p>
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>📐 Plans PDF des salles</h4>
+                            <p>Intégrés via iframe ou viewer PDF pour localiser les équipements</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📚 Documentation équipements</h4>
+                            <p>Fiches techniques, schémas de câblage, manuels</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📋 Historique interventions</h4>
+                            <p>Dates, techniciens, actions effectuées</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🛠️ Outils de diagnostic</h4>
+                            <p>Ping, test connectivité, logs équipements</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>🔗 Interfaces d'administration</h4>
+                            <p>Liens directs vers les équipements (si réseau local)</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>📊 Détails techniques</h4>
+                            <p>IP, modèles, firmware, statut temps réel</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Points clés -->
+                <div class="key-points collapsible">
+                    <button class="key-points-header collapsible-toggle" aria-expanded="true" aria-controls="vitrine-keypoints">
+                        <h3>Points clés</h3>
+                        <span class="collapsible-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="key-points-content collapsible-content" id="vitrine-keypoints">
+                        <div class="key-points-grid">
+                            <div class="key-point">
+                                <h4>Fonctionnalités usager</h4>
+                                <ul>
+                                    <li>Signalement de problème en texte libre</li>
+                                    <li>Affichage état de la salle et équipements</li>
+                                    <li>Actions automatiques (confidence ≥ 0.9)</li>
+                                    <li>Création de tickets SEA</li>
+                                </ul>
+                            </div>
+                            <div class="key-point">
+                                <h4>Widget Monitoring</h4>
+                                <ul>
+                                    <li>Liste des tickets SEA en cours</li>
+                                    <li>Filtres par statut, priorité, salle</li>
+                                    <li>Mise à jour temps réel via SSE</li>
+                                    <li>Badges de statut colorés</li>
+                                </ul>
+                            </div>
+                            <div class="key-point">
+                                <h4>Moteur RAG</h4>
+                                <ul>
+                                    <li>Analyse intelligente des problèmes</li>
+                                    <li>Détection d'intent automatique</li>
+                                    <li>Suggestions de solutions</li>
+                                    <li>Auto-exécution sécurisée</li>
+                                </ul>
+                            </div>
+                            <div class="key-point">
+                                <h4>Compatibilité backend</h4>
+                                <ul>
+                                    <li>Agnostique du backend</li>
+                                    <li>Endpoints API REST documentés</li>
+                                    <li>CORS activé</li>
+                                    <li>SSE optionnel pour temps réel</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Livrables -->
+                <div class="deliverables">
+                    <h3>Livrables</h3>
+                    <div class="deliverables-grid">
+                        <div class="deliverable">
+                            <span class="deliverable-icon" aria-hidden="true">📄</span>
+                            <div class="deliverable-info">
+                                <strong>index.html</strong>
+                                <span>Point d'entrée principal (~200-400 lignes)</span>
+                            </div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="deliverable-icon" aria-hidden="true">🎨</span>
+                            <div class="deliverable-info">
+                                <strong>style.css</strong>
+                                <span>Styles responsives (~300-600 lignes)</span>
+                            </div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="deliverable-icon" aria-hidden="true">⚙️</span>
+                            <div class="deliverable-info">
+                                <strong>script.js</strong>
+                                <span>Logique métier, API calls (~800-1500 lignes)</span>
+                            </div>
+                        </div>
+                        <div class="deliverable">
+                            <span class="deliverable-icon" aria-hidden="true">📚</span>
+                            <div class="deliverable-info">
+                                <strong>HANDOVER_VITRINE.md</strong>
+                                <span>Documentation technique complète</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Impacts -->
+                <div class="impacts">
+                    <h3>Impacts mesurables</h3>
+                    <div class="impacts-grid">
+                        <div class="impact-card">
+                            <div class="impact-value">&lt; 10 sec</div>
+                            <div class="impact-label">Temps de signalement</div>
+                            <div class="impact-comparison">vs appel téléphonique</div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-value">0.9+</div>
+                            <div class="impact-label">Seuil auto-exécution</div>
+                            <div class="impact-comparison">Actions sécurisées</div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-value">Temps réel</div>
+                            <div class="impact-label">Synchronisation</div>
+                            <div class="impact-comparison">SSE + WebSocket</div>
+                        </div>
+                        <div class="impact-card">
+                            <div class="impact-value">2 modes</div>
+                            <div class="impact-label">Usager / Technicien</div>
+                            <div class="impact-comparison">Interface adaptative</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Annexes / Preuves -->
+        <section id="annexes-preuves" class="section" aria-labelledby="annexes-preuves-title">
+            <h2 id="annexes-preuves-title" class="section-title">Annexes / Preuves</h2>
+            
+            <div class="section-content">
+                <h3>Références techniques</h3>
+                
+                <div class="references-grid">
+                    <div class="reference-category">
+                        <h4>StockAV — Fichiers principaux</h4>
+                        <ul class="reference-list">
+                            <li><code>index.html</code> — Structure SPA (410 lignes)</li>
+                            <li><code>script.js</code> — Logique applicative (1411 lignes)</li>
+                            <li><code>style.css</code>, <code>admin-styles.css</code> — Styles</li>
+                            <li><code>supabase/functions/</code> — 5 Edge Functions</li>
+                            <li><code>README.md</code> — Documentation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="reference-category">
+                        <h4>StockAV — Fonctions PostgreSQL</h4>
+                        <ul class="reference-list">
+                            <li><code>search_inventory()</code> — Recherche paginée</li>
+                            <li><code>update_stock_and_log()</code> — Mise à jour atomique</li>
+                            <li><code>process_kit_issuance()</code> — Sortie de kits</li>
+                            <li><code>get_unique_attribute_values()</code> — Filtres dynamiques</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="reference-category">
+                        <h4>Vitrine — Endpoints API</h4>
+                        <ul class="reference-list">
+                            <li><code>POST /api/copilot/vitrine</code> — Analyse problème</li>
+                            <li><code>POST /api/copilot/vitrine-create-ticket</code> — Création ticket</li>
+                            <li><code>GET /api/copilot/vitrine-monitoring-tickets</code> — Widget</li>
+                            <li><code>GET /api/podio/vitrine-room-info</code> — Infos salle</li>
+                            <li><code>GET /api/copilot/vitrine-technician-resources</code> — Mode tech</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="reference-category">
+                        <h4>Vitrine — Documentation</h4>
+                        <ul class="reference-list">
+                            <li><code>HANDOVER_VITRINE.md</code> — Handover technique complet</li>
+                            <li>Sections : Architecture, Parcours utilisateur, Intégrations</li>
+                            <li>Diagrammes Mermaid inclus</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Feuille de route</h3>
+                <div class="table-responsive">
+                    <table class="data-table roadmap-table">
+                        <caption>Améliorations planifiées et priorisées</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Item</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Effort</th>
+                                <th scope="col">Impact</th>
+                                <th scope="col">Priorité</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sécurisation clé API Mouser</td>
+                                <td>Déplacer clé hardcodée vers Supabase Secrets</td>
+                                <td>S</td>
+                                <td>High</td>
+                                <td class="priority-high">Haute</td>
+                            </tr>
+                            <tr>
+                                <td>Instrumentation métriques</td>
+                                <td>Ajouter logs timestamps dans Edge Functions</td>
+                                <td>S</td>
+                                <td>Med</td>
+                                <td class="priority-medium">Moyenne</td>
+                            </tr>
+                            <tr>
+                                <td>Cache résultats IA</td>
+                                <td>Implémenter cache Redis ou localStorage</td>
+                                <td>M</td>
+                                <td>High</td>
+                                <td class="priority-high">Haute</td>
+                            </tr>
+                            <tr>
+                                <td>Mode dégradé</td>
+                                <td>Cache local en cas de downtime Supabase</td>
+                                <td>M</td>
+                                <td>Med</td>
+                                <td class="priority-medium">Moyenne</td>
+                            </tr>
+                            <tr>
+                                <td>Guide utilisateur complet</td>
+                                <td>Documentation avec screenshots, workflows</td>
+                                <td>M</td>
+                                <td>High</td>
+                                <td class="priority-high">Haute</td>
+                            </tr>
+                            <tr>
+                                <td>Tests automatisés</td>
+                                <td>Tests unitaires Edge Functions, tests E2E</td>
+                                <td>L</td>
+                                <td>Med</td>
+                                <td class="priority-low">Basse</td>
+                            </tr>
+                            <tr>
+                                <td>Monitoring & alerting</td>
+                                <td>Intégration Sentry ou équivalent</td>
+                                <td>M</td>
+                                <td>High</td>
+                                <td class="priority-high">Haute</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table-legend">
+                    <strong>Légende effort :</strong> S = Small (1-2j), M = Medium (3-5j), L = Large (1-2 sem)
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 7: CV résumé -->
+        <section id="cv-resume" class="section" aria-labelledby="cv-resume-title">
+            <h2 id="cv-resume-title" class="section-title">CV résumé</h2>
+            
+            <div class="section-content">
+                <div class="cv-grid">
+                    <div class="cv-section">
+                        <h3>Formation</h3>
+                        <ul class="cv-list">
+                            <li>
+                                <strong>DEC en Technologie de l'électronique</strong>
+                                <span class="cv-meta">Cégep de Maisonneuve</span>
+                            </li>
+                            <li>
+                                <strong>Formation continue en développement web</strong>
+                                <span class="cv-meta">Technologies modernes (Vue.js, Go, PostgreSQL)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h3>Certifications</h3>
+                        <ul class="cv-list">
+                            <li>
+                                <strong>Certification Intelligence Artificielle</strong>
+                                <span class="cv-meta">Intégration IA dans les applications</span>
+                            </li>
+                            <li>
+                                <strong>Certifications audiovisuelles</strong>
+                                <span class="cv-meta">Équipements Crestron, Extron, QSC</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h3>Langues</h3>
+                        <ul class="cv-list">
+                            <li><strong>Français</strong> — Langue maternelle</li>
+                            <li><strong>Anglais</strong> — Professionnel (technique)</li>
+                            <li><strong>Arabe</strong> — Courant</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cv-section">
+                        <h3>Compétences techniques</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h4>Frontend</h4>
+                                <ul>
+                                    <li>HTML5, CSS3, JavaScript</li>
+                                    <li>Vue.js 3, Pinia</li>
+                                    <li>Responsive design</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Backend</h4>
+                                <ul>
+                                    <li>Go (Gorilla Mux)</li>
+                                    <li>PostgreSQL, Supabase</li>
+                                    <li>Edge Functions (Deno)</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Intégrations</h4>
+                                <ul>
+                                    <li>APIs REST</li>
+                                    <li>SSE, WebSocket</li>
+                                    <li>IA (Cohere, Gemini)</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h4>Audiovisuel</h4>
+                                <ul>
+                                    <li>PJLink, SSCP</li>
+                                    <li>Crestron, QSC</li>
+                                    <li>Diagnostic réseau</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-highlight">
+                    <h3>Projet connexe : SAVQonnect</h3>
+                    <p>
+                        En parallèle des projets StockAV et Vitrine, j'ai contribué au développement de 
+                        <strong>SAVQonnect</strong>, une plateforme complète de monitoring audiovisuel pour l'UQAM. 
+                        Ce projet inclut :
+                    </p>
+                    <ul>
+                        <li>Backend Go avec API REST et monitoring temps réel</li>
+                        <li>Frontend Vue.js 3 avec interface d'administration</li>
+                        <li>Intégration Podio pour gestion des bons de travail</li>
+                        <li>Système de chat bidirectionnel avec SSE</li>
+                        <li>Support multi-protocoles (PJLink, SSCP, SSH)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-info">
+                <p class="footer-version">
+                    <strong>Version du document :</strong> 1.0 — Décembre 2025
+                </p>
+                <p class="footer-author">
+                    <strong>Auteur :</strong> Zineddine Chergui
+                </p>
+                <p class="footer-contact">
+                    <strong>Contact :</strong> Service de l'audiovisuel, UQAM
+                </p>
+            </div>
+            
+            <div class="footer-legal">
+                <p>© 2025 Zineddine Chergui — Tous droits réservés</p>
+                <p>Document préparé dans le cadre de la demande d'avancement à la classe 1</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
+
