@@ -1,7 +1,7 @@
 # Avancement à la classe 1 — Projet StockAV (Analyse et justification)
 
 **Auteur**: Zineddine Chergui  
-**Date**: 2025-01-XX  
+**Date**: 2026-01-01  
 **Version du projet**: StockAV v9.0  
 **Institution**: UQAM
 
