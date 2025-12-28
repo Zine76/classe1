@@ -92,7 +92,7 @@ Avant StockAV, la gestion reposait probablement sur des feuilles de calcul (Exce
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    FRONTEND (Client Web)                     │
+│                    FRONTEND (Client Web)                    │
 │  ┌──────────────────────────────────────────────────────┐   │
 │  │  index.html (SPA)                                    │   │
 │  │  - script.js (1411 lignes, logique applicative)      │   │
@@ -105,15 +105,15 @@ Avant StockAV, la gestion reposait probablement sur des feuilles de calcul (Exce
 ┌───────────────────────▼─────────────────────────────────────┐
 │              SUPABASE (Backend as a Service)                │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │  PostgreSQL Database                                  │   │
-│  │  - Tables: inventory, categories, logs, user_kits     │   │
+│  │  PostgreSQL Database                                 │   │
+│  │  - Tables: inventory, categories, logs, user_kits    │   │
 │  │  - RPC Functions: search_inventory,                  │   │
 │  │    update_stock_and_log, process_kit_issuance        │   │
 │  │  - Row Level Security (RLS)                          │   │
 │  └──────────────────────────────────────────────────────┘   │
 │  ┌──────────────────────────────────────────────────────┐   │
-│  │  Supabase Auth                                        │   │
-│  │  - Authentification par email/password                │   │
+│  │  Supabase Auth                                       │   │
+│  │  - Authentification par email/password               │   │
 │  │  - Sessions JWT                                      │   │
 │  └──────────────────────────────────────────────────────┘   │
 │  ┌──────────────────────────────────────────────────────┐   │
@@ -133,9 +133,9 @@ Avant StockAV, la gestion reposait probablement sur des feuilles de calcul (Exce
         ┌───────────────┼───────────────┐
         │               │               │
 ┌───────▼──────┐ ┌──────▼──────┐ ┌──────▼──────┐
-│ Cohere API  │ │ Google AI   │ │ Mouser API  │
-│ (IA)        │ │ (IA Chat)   │ │ (Composants)│
-└─────────────┘ └──────────────┘ └─────────────┘
+│ Cohere API   │ │ Google AI   │ │ Mouser API  │
+│ (IA)         │ │ (IA Chat)   │ │ (Composants)│
+└───────────-──┘ └─────────────┘ └─────────────┘
 ```
 
 ### 2) Frontend
