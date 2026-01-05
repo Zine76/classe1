@@ -308,7 +308,7 @@
     // ==========================================================================
     
     // ==========================================================================
-    // Enhanced Search with Highlighting
+    // Enhanced Search with Accurate Highlighting
     // ==========================================================================
     
     let searchMatches = [];
@@ -320,61 +320,102 @@
     function clearHighlights() {
         document.querySelectorAll('.search-highlight').forEach(el => {
             const parent = el.parentNode;
-            parent.replaceChild(document.createTextNode(el.textContent), el);
-            parent.normalize();
+            if (parent) {
+                parent.replaceChild(document.createTextNode(el.textContent), el);
+                parent.normalize();
+            }
         });
         searchMatches = [];
         currentMatchIndex = 0;
     }
     
     /**
-     * Highlight text matches in an element
+     * Find all positions of a substring (case-insensitive, accent-insensitive)
+     * Returns positions in the ORIGINAL text
+     * @param {string} text - Original text
+     * @param {string} query - Search query
+     * @returns {Array} Array of {start, length} positions in original text
+     */
+    function findMatchPositions(text, query) {
+        const positions = [];
+        const lowerText = text.toLowerCase();
+        const lowerQuery = query.toLowerCase();
+        
+        let startIndex = 0;
+        let pos;
+        
+        while ((pos = lowerText.indexOf(lowerQuery, startIndex)) !== -1) {
+            positions.push({
+                start: pos,
+                length: query.length
+            });
+            startIndex = pos + 1;
+        }
+        
+        return positions;
+    }
+    
+    /**
+     * Highlight text matches in an element - accurate version
      * @param {Element} element - Element to search in
      * @param {string} query - Search query
      */
     function highlightMatches(element, query) {
-        const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT, null, false);
-        const textNodes = [];
+        if (!query || query.length < 2) return;
         
+        const walker = document.createTreeWalker(
+            element, 
+            NodeFilter.SHOW_TEXT, 
+            {
+                acceptNode: function(node) {
+                    // Skip empty nodes and nodes inside already highlighted elements
+                    if (node.textContent.trim() === '') return NodeFilter.FILTER_REJECT;
+                    if (node.parentNode.classList && node.parentNode.classList.contains('search-highlight')) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+                    return NodeFilter.FILTER_ACCEPT;
+                }
+            }
+        );
+        
+        const nodesToProcess = [];
         while (walker.nextNode()) {
-            textNodes.push(walker.currentNode);
+            nodesToProcess.push(walker.currentNode);
         }
         
-        const normalizedQuery = normalizeText(query);
-        
-        textNodes.forEach(node => {
+        nodesToProcess.forEach(node => {
             const text = node.textContent;
-            const normalizedText = normalizeText(text);
-            let lastIndex = 0;
-            let index;
-            const fragments = [];
+            const positions = findMatchPositions(text, query);
             
-            while ((index = normalizedText.indexOf(normalizedQuery, lastIndex)) !== -1) {
+            if (positions.length === 0) return;
+            
+            const fragment = document.createDocumentFragment();
+            let lastEnd = 0;
+            
+            positions.forEach(pos => {
                 // Add text before match
-                if (index > lastIndex) {
-                    fragments.push(document.createTextNode(text.substring(lastIndex, index)));
+                if (pos.start > lastEnd) {
+                    fragment.appendChild(document.createTextNode(text.substring(lastEnd, pos.start)));
                 }
                 
-                // Add highlighted match
+                // Add highlighted match with exact original text
                 const mark = document.createElement('mark');
                 mark.className = 'search-highlight';
-                mark.textContent = text.substring(index, index + query.length);
-                fragments.push(mark);
+                mark.textContent = text.substring(pos.start, pos.start + pos.length);
+                fragment.appendChild(mark);
                 searchMatches.push(mark);
                 
-                lastIndex = index + query.length;
-            }
+                lastEnd = pos.start + pos.length;
+            });
             
             // Add remaining text
-            if (lastIndex < text.length) {
-                fragments.push(document.createTextNode(text.substring(lastIndex)));
+            if (lastEnd < text.length) {
+                fragment.appendChild(document.createTextNode(text.substring(lastEnd)));
             }
             
-            // Replace node if matches found
-            if (fragments.length > 0 && lastIndex > 0) {
-                const parent = node.parentNode;
-                fragments.forEach(frag => parent.insertBefore(frag, node));
-                parent.removeChild(node);
+            // Replace original node with fragment
+            if (node.parentNode) {
+                node.parentNode.replaceChild(fragment, node);
             }
         });
     }
@@ -386,18 +427,20 @@
     function goToMatch(index) {
         if (searchMatches.length === 0) return;
         
-        // Remove current highlight
+        // Remove current highlight from all
         searchMatches.forEach(m => m.classList.remove('search-current'));
         
-        // Update index
-        currentMatchIndex = (index + searchMatches.length) % searchMatches.length;
+        // Update index with wrap-around
+        currentMatchIndex = ((index % searchMatches.length) + searchMatches.length) % searchMatches.length;
         
         // Highlight current match
         const currentMatch = searchMatches[currentMatchIndex];
-        currentMatch.classList.add('search-current');
-        
-        // Scroll to match
-        currentMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (currentMatch) {
+            currentMatch.classList.add('search-current');
+            
+            // Scroll to match
+            currentMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
         
         // Update counter
         updateSearchCounter();
@@ -410,12 +453,25 @@
         const resultsEl = document.getElementById('search-results');
         const countEl = resultsEl?.querySelector('.search-results-count');
         
-        if (countEl && searchMatches.length > 0) {
-            countEl.textContent = `${currentMatchIndex + 1} / ${searchMatches.length}`;
-            resultsEl.hidden = false;
-        } else if (resultsEl) {
-            resultsEl.hidden = true;
+        if (countEl) {
+            if (searchMatches.length > 0) {
+                countEl.textContent = `${currentMatchIndex + 1} / ${searchMatches.length}`;
+                resultsEl.hidden = false;
+            } else {
+                countEl.textContent = '0 résultat';
+                resultsEl.hidden = false;
+            }
         }
+    }
+    
+    /**
+     * Check if text contains query (case-insensitive)
+     * @param {string} text - Text to search in
+     * @param {string} query - Search query
+     * @returns {boolean}
+     */
+    function textContainsQuery(text, query) {
+        return text.toLowerCase().includes(query.toLowerCase());
     }
     
     /**
@@ -434,10 +490,8 @@
             clearBtn.hidden = query.length === 0;
         }
         
-        const normalizedQuery = normalizeText(query);
-        
-        if (normalizedQuery.length < config.searchMinLength) {
-            // Show all sections if query is too short
+        // Reset if query too short
+        if (query.length < config.searchMinLength) {
             elements.sections.forEach(section => {
                 section.classList.remove('search-hidden');
             });
@@ -455,17 +509,19 @@
             const sectionTitle = section.querySelector('.section-title');
             const sectionContent = section.querySelector('.section-content');
             
-            const titleText = sectionTitle ? normalizeText(sectionTitle.textContent) : '';
-            const contentText = sectionContent ? normalizeText(sectionContent.textContent) : '';
+            const titleText = sectionTitle ? sectionTitle.textContent : '';
+            const contentText = sectionContent ? sectionContent.textContent : '';
             
-            const matches = titleText.includes(normalizedQuery) || contentText.includes(normalizedQuery);
+            const matchesTitle = textContainsQuery(titleText, query);
+            const matchesContent = textContainsQuery(contentText, query);
+            const matches = matchesTitle || matchesContent;
             
             section.classList.toggle('search-hidden', !matches);
             
             // Highlight matches in visible sections
             if (matches) {
-                if (sectionTitle) highlightMatches(sectionTitle, query);
-                if (sectionContent) highlightMatches(sectionContent, query);
+                if (sectionTitle && matchesTitle) highlightMatches(sectionTitle, query);
+                if (sectionContent && matchesContent) highlightMatches(sectionContent, query);
             }
         });
         
@@ -480,11 +536,10 @@
             }
         });
         
-        // Navigate to first match
+        // Update counter and navigate to first match
+        updateSearchCounter();
         if (searchMatches.length > 0) {
             goToMatch(0);
-        } else {
-            updateSearchCounter();
         }
     }
 
@@ -499,7 +554,7 @@
         
         if (searchInput) {
             const debouncedSearch = debounce((e) => {
-                searchSections(e.target.value);
+                searchSections(e.target.value.trim());
             }, config.debounceDelay);
             
             searchInput.addEventListener('input', debouncedSearch);
