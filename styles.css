@@ -1285,6 +1285,10 @@ li::marker {
     border: 1px solid var(--color-gray-200);
 }
 
+.feature-item {
+    position: relative;
+}
+
 .feature-item h4 {
     font-size: var(--font-size-base);
     color: var(--color-primary);
@@ -1295,6 +1299,36 @@ li::marker {
     font-size: var(--font-size-sm);
     color: var(--color-gray-600);
     margin: 0;
+}
+
+/* Feature available (implemented) */
+.feature-available {
+    border-left: 3px solid var(--color-success);
+}
+
+.feature-available h4::after {
+    content: " ✓";
+    color: var(--color-success);
+    font-size: var(--font-size-sm);
+}
+
+/* Feature in development */
+.feature-dev {
+    border-left: 3px solid var(--color-warning);
+    opacity: 0.85;
+}
+
+.feature-badge {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    padding: 2px var(--spacing-sm);
+    background-color: var(--color-warning);
+    color: white;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    border-radius: var(--border-radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 /* References */
