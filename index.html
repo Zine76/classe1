@@ -70,7 +70,16 @@
         <div class="toc-content" id="toc-list">
             <div class="toc-search">
                 <label for="search-input" class="visually-hidden">Rechercher dans le document</label>
-                <input type="search" id="search-input" placeholder="Rechercher..." aria-label="Rechercher dans le document">
+                <div class="search-wrapper">
+                    <span class="search-icon" aria-hidden="true">🔍</span>
+                    <input type="search" id="search-input" placeholder="Rechercher dans le dossier..." aria-label="Rechercher dans le document" autocomplete="off">
+                    <button type="button" class="search-clear" id="search-clear" aria-label="Effacer la recherche" hidden>✕</button>
+                </div>
+                <div class="search-results" id="search-results" hidden>
+                    <span class="search-results-count"></span>
+                    <button type="button" class="search-nav-btn" id="search-prev" aria-label="Résultat précédent">↑</button>
+                    <button type="button" class="search-nav-btn" id="search-next" aria-label="Résultat suivant">↓</button>
+                </div>
             </div>
             
             <ol class="toc-list">
