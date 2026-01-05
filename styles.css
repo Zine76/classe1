@@ -1673,6 +1673,8 @@ li::marker {
     background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
     border: 2px solid var(--color-accent);
     position: relative;
+    padding-top: calc(var(--spacing-lg) + 8px);
+    margin-top: var(--spacing-md);
 }
 
 .skill-highlight::before {
@@ -1690,6 +1692,7 @@ li::marker {
 
 .skill-highlight h4 {
     color: var(--color-accent);
+    margin-top: 0;
 }
 
 /* CV Experiences */
